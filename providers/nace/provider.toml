@@ -1,0 +1,8 @@
+# Nace serves one API, System One decisions at POST /v1/systemone with a Bearer `nace_sk_` key. It has no chat API.
+# `@ai-sdk/typesafe-ai` and its `decisions` entry point speak that wire format, and each model sets Nace's base URL in its own `[api.systemone]` table.
+# https://console.nace.ai/docs/drex/api-reference/systemone (accessed 2026-11-11)
+name = "Nace"
+env = ["NACE_API_KEY"]
+npm = "@ai-sdk/typesafe-ai"
+opencodeai = "@opencode/ai/providers/typesafe-ai/decisions"
+doc = "https://console.nace.ai/docs"
