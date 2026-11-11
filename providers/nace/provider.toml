@@ -1,0 +1,9 @@
+name = "Nace"
+env = ["NACE_API_KEY"]
+npm = "@ai-sdk/openai-compatible"
+opencodeai = "none"
+# Drex serves decision models only: POST /v1/systemone, Bearer auth with a `nace_sk_` key. There is no chat API,
+# so `opencodeai = "none"` and every model names its own `[api.systemone]` table.
+# https://console.nace.ai/docs/drex/api-reference/systemone (accessed 2026-11-11)
+api = "https://console.nace.ai/v1"
+doc = "https://console.nace.ai/docs"
