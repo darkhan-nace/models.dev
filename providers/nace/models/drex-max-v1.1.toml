@@ -1,0 +1,21 @@
+# Sources:
+# - https://console.nace.ai/docs/drex/api-reference/systemone
+# - Price: $0.00000003 per input token, output and image tokens unbilled beyond input_tokens, which already include image tokens (https://console.nace.ai/models)
+# Images go in the top-level `images` list next to `state`, so `media_input = "root"`; audio and video are not read.
+schema = 2
+v2_only = true
+base_model = "nace-ai/drex-max-v1.1"
+
+[capabilities]
+structured_output = true
+
+[api.systemone]
+base_url = "https://console.nace.ai/v1"
+sdk = { aisdk = "none", opencodeai = "@opencode/ai/providers/nace/decisions" }
+compatibility = { media_input = "root" }
+
+[cost.text.input]
+price = 0.03
+
+[cost.text.output]
+price = 0

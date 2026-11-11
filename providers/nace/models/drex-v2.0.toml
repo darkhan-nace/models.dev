@@ -1,0 +1,20 @@
+# Sources:
+# - https://console.nace.ai/docs/drex/api-reference/systemone
+# - Price: $0.00000003 per input token, output unbilled (https://console.nace.ai/models)
+# The API reads Drex 2.0 state up to 131,072 tokens and 262,144 tokens for the state plus its longest question; text only.
+schema = 2
+v2_only = true
+base_model = "nace-ai/drex-v2.0"
+
+[capabilities]
+structured_output = true
+
+[api.systemone]
+base_url = "https://console.nace.ai/v1"
+sdk = { aisdk = "none", opencodeai = "@opencode/ai/providers/nace/decisions" }
+
+[cost.text.input]
+price = 0.03
+
+[cost.text.output]
+price = 0
